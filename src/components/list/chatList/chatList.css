@@ -1,0 +1,101 @@
+.chatList {
+  flex: 1;
+  overflow: scroll;
+  overflow-y: auto; /* Ensures scrolling works vertically */
+  max-height: 80vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+    .searchBar {
+      flex: 1;
+      background-color: rgba(17, 25, 40, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-radius: 10px;
+      padding: 10px;
+
+      input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        flex: 1;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .add {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(17, 25, 40, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #dddddd35;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .texts {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      span {
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 300;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 2 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+/* Custom Scrollbar */
+.chatList::-webkit-scrollbar {
+  width: 8px; /* Make it thinner */
+}
+
+.chatList::-webkit-scrollbar-track {
+  background: transparent; /* Hide the track */
+}
+
+.chatList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.chatList::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5); /* Slightly darker on hover */
+}
